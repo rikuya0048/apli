@@ -1,0 +1,58 @@
+.follow-btn {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.followed-btn {
+    border-radius: 4px;
+    border: 1px solid skyblue;
+    padding: 10px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    color: deepskyblue;
+    background-color: whitesmoke;
+
+}
+
+.create {
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+.buy-price {
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+
+// 親要素にrelative（定型文句みたいなもの。これを基準に子要素のpositionプロパティをいじるよという印）
+.wrap {
+  position: relative;
+}
+// メニューdivの初期位置を指定
+.wrap .icon_link_tab {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  transition: 0.3s ease-out;
+}
+// バーガーアイコンクリック時の追加CSS
+.wrap .icon_link_tab.open {
+  right: 0;
+  transition: 0.3s ease-out;
+}

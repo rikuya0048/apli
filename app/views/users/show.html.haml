@@ -1,0 +1,41 @@
+.container
+  .main
+    = @user.name
+    さんのプロフィール
+    = render "relationships/follow_button", user: @user
+    .status
+    %p 年齢
+    %p 出身地
+    %p 性別
+    %p 趣味
+    %p 一言
+    
+
+    .top
+    = @user.name
+    さんの投稿一覧
+    - @posts.each do |post|
+      .content
+        .content__top
+          = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
+        .content__bottom
+          .content__title
+            = link_to post.title, post_path(post.id), class: "title"
+          .content__text
+            = post.content
+          .content__user
+            投稿者:
+            = post.user.name
+    -# - @posts.each do |post|
+    -#   .content
+    -#     .content__left
+    -#       .content__left--image
+    -#     .content__right
+    -#       .content__right__top
+    -#         = link_to post.title, post_path(post.id), class: "content__right__top--title"
+    -#       .content__right__bottom
+    -#         .content__right__bottom--userName
+    -#           = link_to post.user.name, user_path(post.user), class: "content__right__bottom--userName--btn"
+    -#         .content__right__bottom--date
+    -#           = post.created_at
+  .side

@@ -1,0 +1,10 @@
+.container
+  .main
+    %h2 新規記事の作成
+    = form_with model: @post, class: :form, local: true do |form|
+      = form.text_field :title, placeholder: :タイトル, class: :form__title
+      = form.file_field :image, placeholder: "Image Url"
+      = form.text_area :content, placeholder: :ブログ本文, class: :form__text
+      = form.number_field :price, placeholder: "例）1000", class: "price"
+      = form.submit '投稿する', class: :form__btn
+  .side

@@ -1,0 +1,26 @@
+.main {
+
+
+  .postImage {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .postTitle {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .postAuthor {
+    padding: 20px 30px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .postGood {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+  }
+}
