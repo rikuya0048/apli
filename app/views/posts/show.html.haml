@@ -20,13 +20,13 @@
     .comment
       - if current_user
         = form_with(model: [@post, @comment], local: true) do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2"
-          = form.submit "SEND"
+          = form.text_area :text, placeholder: "レビューを入力してください", rows: "2", class: "form-comment"
+          = form.submit "レビューする", class: "orange-btn"
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
       .comments
-      %h4 ＜コメント一覧＞
+      %h4 この記事のレビュー
       - if @comments
         - @comments.each do |comment|
           %p
@@ -34,6 +34,6 @@
               = link_to comment.user.name, "/users/#{comment.user_id}"
             = comment.text
   .side
-    = icon('fas', 'image', class: 'icon')
+    = render "posts/side.html"
   
 

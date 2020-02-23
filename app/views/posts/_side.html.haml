@@ -1,0 +1,15 @@
+.side-top
+  %h2 ユーザー情報
+  ユーザー名
+  - if current_user
+    = current_user.name
+.side-middle
+  %h2 カテゴリー
+  .side-middle__category
+    プログラミング
+    ブログ
+    %br/
+    趣味
+    ノウハウ
+.side-bottom
+  %h2 おすすめの記事

@@ -47,12 +47,12 @@ class CardsController < ApplicationController
         customer: card.customer_id, #顧客ID
         currency: 'jpy', #日本円
         )
-    #     if @product.update(status: 1, buyer_id: current_user.id)
-    #       flash[:notice] = '購入しました。'
-    #       redirect_to "/"
-    #     else
-    #       flash[:alert] = '購入に失敗しました。'
-    #       redirect_to "/"
+        # if @post.update(status: 1, buyer_id: current_user.id)
+          # flash[:notice] = '購入しました。'
+          # redirect_to "/"
+        # else
+        #   flash[:alert] = '購入に失敗しました。'
+        #   redirect_to "/"
         end
       end
     # else
