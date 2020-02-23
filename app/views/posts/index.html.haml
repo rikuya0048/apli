@@ -1,6 +1,6 @@
 .container
   .main
-    %h2 投稿一覧
+    %h2 記事を見つけよう
     - @posts.each do |post|
       .content
         .content__top
@@ -14,20 +14,4 @@
             投稿者:
             = post.user.name
   .side
-    .side-top
-      = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
-        = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
-        = form.submit "検索", class: "search-btn"
-        %h2 フォロワー数
-        ユーザー名
-        - if current_user
-          = current_user.name
-    .side-middle
-    .side-bottom
-      .wrap
-        %li#menu_link
-          %i.fas.fa-user
-        .icon_link_tab
-          .close_btn
-            %i.fas.fa-times
-              aaa
+    = render "posts/side.html"

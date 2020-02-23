@@ -5,6 +5,7 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 16px;
+    float: right;
 }
 
 .followed-btn {
@@ -19,7 +20,7 @@
 
 }
 
-.create {
+.orange-btn {
     text-decoration: none;
     border-radius: 4px;
     border: 1px solid #ccc;
@@ -27,6 +28,7 @@
     background-color: orangered;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .buy-price {
@@ -37,22 +39,56 @@
     background-color: orangered;
     color: white;
     font-weight: bold;
+    float: right;
 }
 
+.menu-bar {
+    display: none;
+}
 
-// 親要素にrelative（定型文句みたいなもの。これを基準に子要素のpositionプロパティをいじるよという印）
-.wrap {
-  position: relative;
+.login-btn {
+  text-decoration: none;
+  color: #333;
 }
-// メニューdivの初期位置を指定
-.wrap .icon_link_tab {
-  position: absolute;
-  top: 0;
-  right: -300px;
-  transition: 0.3s ease-out;
+
+.comment {
+    .orange-btn {
+        float: right;
+        margin-top: 10px;
+
+    }
 }
-// バーガーアイコンクリック時の追加CSS
-.wrap .icon_link_tab.open {
-  right: 0;
-  transition: 0.3s ease-out;
+
+.head-user-hidden {
+    display: none;
+}
+
+.search-input {
+    height: 32px;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.search-btn {
+    height: 30px;
+    width: 50px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: darkcyan;
+    color: white;
+}
+// 投稿するボタン
+.create-btn {
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 80px;
 }
