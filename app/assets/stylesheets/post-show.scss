@@ -15,12 +15,34 @@
   }
 
   .postAuthor {
-    padding: 20px 30px;
+  
+    padding: 50px 30px;
     border-bottom: 1px solid #ccc;
   }
 
   .postGood {
-    height: 50px;
+    height: 70px;
     border-bottom: 1px solid #ccc;
+  }
+
+  .postText {
+    padding-top: 30px;
+    height: 300px;
+  }
+}
+
+// cards/show　購入画面
+.inner {
+
+  .buy-content {
+    height: 300px;
+  }
+
+  .buy-btn {
+  
+  }
+
+  .buy-card {
+    margin-top: 30px;
   }
 }

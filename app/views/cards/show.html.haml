@@ -1,18 +1,21 @@
-.container
-  .main
-    %h2 購入確認画面
-    -# = link_to "カードの登録", new_card_path, class: "card-new"
-    -# .buy-btn
-    -#   = link_to  "/cards/#{@post.id}",class:"buy-btn__link" do
-    -#     購入する
-    .buy-content
-      %p 販売者
+.inner
+  %h2 購入確認画面
+  -# = link_to "カードの登録", new_card_path, class: "card-new"
+  -# .buy-btn
+  -#   = link_to  "/cards/#{@post.id}",class:"buy-btn__link" do
+  -#     購入する
+  .buy-content
+    %p
+      %label 販売者
       = @post.user.name
-      %p 商品のタイトル
+    %p
+      %label 商品名
       = @post.title
-      %p 商品の価格
-      = @post.price
+    %p
+      %label 価格
+      = @post.price 
+  .login-btn
+    = link_to  "/cards/#{@post.id}",class: "login-btn" do
+      購入する
+  .buy-card
     = link_to "カードの登録", new_card_path, class: "card-new"
-    .buy-btn
-      = link_to  "/cards/#{@post.id}",class:"buy-btn__link" do
-        購入する
