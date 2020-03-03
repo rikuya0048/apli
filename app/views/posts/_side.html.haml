@@ -3,13 +3,47 @@
   ユーザー名
   - if current_user
     = current_user.name
+  .side-top__user
+    .side-top__user-image
+      = image_tag '/material/logo/kid_job_boy_businessman.png', size: "115x115", class: "user-image"
+    .side-top__user-content
+      %p フォローユーザー
+      
 .side-middle
   %h2 カテゴリー
   .side-middle__category
-    プログラミング
-    ブログ
-    %br/
-    趣味
-    ノウハウ
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "プログラミング", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "ブログ", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "趣味", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "ノウハウ", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "自己啓発", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "投資情報", "#", class: "menu-list"
+
 .side-bottom
   %h2 おすすめの記事
+  .side-bottom-content
+    .side-bottom-content-text
+    %i#user.fa.fa-angle-double-right
+    .side-bottom-content-title
+    aaaaa
+  .side-bottom-content
+    .side-bottom-content-text
+    %i#user.fa.fa-angle-double-right
+  .side-bottom-content
+    .side-bottom-content-text
+    %i#user.fa.fa-angle-double-right
+  .side-bottom-content
+    .side-bottom-content-text
+    %i#user.fa.fa-angle-double-right

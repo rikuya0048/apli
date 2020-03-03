@@ -13,5 +13,7 @@
           .content__user
             投稿者:
             = post.user.name
+          .content__category
+    = paginate @posts
   .side
     = render "posts/side.html"

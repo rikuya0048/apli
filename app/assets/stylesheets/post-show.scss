@@ -5,6 +5,7 @@
     height: 300px;
     width: 100%;
     text-align: center;
+    margin-top: 30px;
   }
 
   .postTitle {
@@ -31,7 +32,7 @@
   }
 }
 
-// cards/show　購入画面
+// cards/show購入画面
 .inner {
 
   .buy-content {
@@ -46,3 +47,63 @@
     margin-top: 30px;
   }
 }
+
+.inner {
+
+  .card-register {
+    height: 400px;
+  
+
+    .card-register__list {
+      height: 100px;
+
+      .number {
+        height: 35px;
+        width: 350px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        border-radius: 3px;
+      }
+
+      select#exp_month {
+        height: 35px;
+        width: 50px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        border-radius: 3px;
+
+      }
+
+      select#exp_year {
+        height: 35px;
+        width: 50px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        border-radius: 3px;
+      }
+
+      .cvc {
+        height: 35px;
+        width: 350px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.card-register-btn {
+      text-decoration: none;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 10px 10px;
+      margin-top: 20px;
+      width: 350px;
+      height: 45px;
+      background-color: orangered;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }

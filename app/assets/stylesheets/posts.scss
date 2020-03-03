@@ -15,6 +15,10 @@
     width: 63%;
     // background-color: whitesmoke;
 
+    .content:hover {
+      background-color: #F2F5FB;
+    }
+
     .content {
       height: 500px;
       width: 100%;
@@ -25,6 +29,13 @@
       margin-bottom: 30px;
       cursor: pointer;
       box-shadow: 0 0 6px #ccc;
+      position: relative;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+
+
 
       .content__top {
         height: 300px;
@@ -45,13 +56,19 @@
             font-size: 25px;
             font-weight: bold;
             text-decoration: none;
-            color: #333;
+            color: #333;display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding-top: 330px;
           }
         }
         .content__text {
           height: 80px;
           width: 501px;
-          padding: 0px 25px;
+          padding: 10px 25px;
         }
         .content__user {
           padding: 0px 25px;
@@ -60,32 +77,6 @@
     }
 
   }
-  .side {
-    width: 37%;
-    height: 700px;
-    padding-left: 30px;
-    
-
-    .side-top {
-      height: 250px;
-      border-bottom: 1px solid #ccc;
-      // background-color: lightsteelblue;
-    }
-
-    .side-middle {
-      height: 150px;
-      border-bottom: 1px solid #ccc;
-      // background-color: lightgoldenrodyellow;
-    }
-
-    .side-bottom {
-      height: 300px;
-      border-bottom: 1px solid #ccc;
-      // background-color: ivory;
-    }
-    
-  }
-
 }
 
 header {
@@ -111,17 +102,31 @@ header {
 
     i#search {
       margin-right: 20px;
-      margin-top: 12px;
+      margin-top: 10px;
       cursor: pointer;
+      float: right;
     }
   }
 
   .header-user {
     float: right;
+    
     i#user {
       margin-right: 20px;
       cursor: pointer;
     }
+  }
+
+  h1 {
+    
+    float: right;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-right: 50px;
+    font-size: 24px;
+    color: darkcyan;
+    -webkit-text-stroke: 1px #333;
+  
   }
 }
 
