@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##バージョン
+Ruby2.5.1
+Ruby on Rails5.2.4.1
+gem2.7.6
+Bundler2.0.2
 
-Things you may want to cover:
+##使用言語
+・HTML/CSS
+・JQuery
+・Ruby on Rails
+・AWS
+・MySQL
 
-* Ruby version
+##コンセプト
+コンテンツ販売プラットフォーム「Brain」を参考に、
+投稿した記事を、有料で買える仕組み
 
-* System dependencies
+##実装機能
+・ログイン機能(メールアドレス)
+・投稿機能(画像、値段設定)
+・編集、削除機能
+・コメント機能
+・検索機能
+・フォロー機能
+・決済機能(Pay.jp)
+・ページネーション
 
-* Configuration
+##実装予定
+・カテゴリー機能
+・フォローしたユーザーの投稿表示
+・JQueryを使った動き
 
-* Database creation
+##使い方
+http://3.114.144.37/ にアクセスして頂くとご覧いただけます。
+・右上の新規登録をおこなってください。
+・ログインすると、「投稿する」から記事を投稿できます。
+→ログアウトする場合は、右上のアカウントマークを押し、ログアウトを押してください。
+→タイトル、本文、画像、値段を入力して投稿してください。
+・トップページにはそれぞれの投稿が表示され、クリックすると
+ 記事の詳細や、投稿者のマイページに遷移することができます。
+・記事を購入する場合は、値段ボタンを押してください。
+ →クレジットカード登録画面にうつるので、入力すると購入確認ページへ遷移します。
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
