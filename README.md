@@ -7,11 +7,11 @@ gem2.7.6
 Bundler2.0.2
 
 ## 使用言語
-・HTML/CSS
-・JQuery
-・Ruby on Rails
-・AWS
-・MySQL
+・HTML/CSS  
+・JQuery  
+・Ruby on Rails  
+・AWS  
+・MySQL  
 
 ## コンセプト
 コンテンツ販売プラットフォーム「Brain」を参考に、
