@@ -1,6 +1,8 @@
 # README
 <img width="1149" alt="スクリーンショット 2020-03-17 13 33 46" src="https://user-images.githubusercontent.com/59165663/76822324-faf29e80-6853-11ea-8ada-7ff0c38b9986.png">
+
 ## 使用した技術
+
 |  種別  |  名称  |
 | ---- | ---- |
 |  開発言語  |  Ruby(ver 2.5.1  |
