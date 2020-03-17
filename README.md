@@ -1,17 +1,20 @@
 # README
 
-## バージョン
-Ruby2.5.1  
-Ruby on Rails5.2.4.1  
-gem2.7.6  
-Bundler2.0.2  
-
-## 使用言語
-・HTML/CSS  
-・JQuery  
-・Ruby on Rails  
-・AWS  
-・MySQL  
+## 使用した技術
+|  種別  |  名称  |
+| ---- | ---- |
+|  開発言語  |  Ruby(ver 2.5.1  |
+|  フレームワーク  |  Ruby on Rails(ver 5.2.4.1)  |
+|  マークアップ  |  HTML(Haml),CSS(Sass)  |
+|  フロントエンド  |  JavaScript(jQuery)  |
+|  DB  |  MySQL  |
+|  本番環境  |  AWS,EC2  |
+|  Webサーバー  |  Nginx  |
+|  applicationサーバー  |  Unicorn  |
+|  画像アップロード  |  carrierwave,AWS,S3  |
+|  自動デプロイ  |  capistrano  |
+|  ユーザー管理  |  devise  |
+|  決済機能  |  pay.jp  |
 
 ## コンセプト
 コンテンツ販売プラットフォーム「Brain」を参考に、  
@@ -24,7 +27,7 @@ Bundler2.0.2
 ・コメント機能  
 ・検索機能  
 ・フォロー機能  
-・決済機能(Pay.jp)  
+・決済機能 
 ・ページネーション  
 ・AWSでの自動デプロイ  
 
