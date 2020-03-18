@@ -18,6 +18,61 @@
 |  ユーザー管理  |  devise  |
 |  決済機能  |  pay.jp  |
 
+## postsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, index: true|
+|name|string|null: false, unique: true|
+### Association
+- has_many :groups_users
+- has_many :groups, through: :groups_users
+- has_many :messages
+
+## relationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|string|null: false, unique:true|
+|follow|
+### Association
+- has_many :groups_users
+- has_many :users, through: :groups_users
+- has_many :messages
+
+## comments
+|column|Type|Options|
+|------|----|-------|
+|use|
+|post|
+|text|
+
+### Association
+
+
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|card|references|null: false, foreign_key: true|
+|customer|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 ## コンセプト
 コンテンツ販売プラットフォーム「Brain」を参考に、  
 投稿した記事を、有料で買える仕組み
