@@ -22,12 +22,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
-|image|string||
-|group|references|null: false, foreign_key: true|
-|user|references|null: false, foreign_key: true|
+|body|text|null: false|
+|image|text||null: false|
+|user_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :group
 - belongs_to :user
 
 ## usersテーブル
@@ -37,45 +35,47 @@
 |email|string|null: false, index: true|
 |name|string|null: false, unique: true|
 ### Association
-- has_many :groups_users
-- has_many :groups, through: :groups_users
-- has_many :messages
+- has_many :posts
 
 ## relationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|string|null: false, unique:true|
-|follow|
+|user_id|string|null: false, unique:true|
+|follow_id|string|null: false, foreign_key: true|
 ### Association
-- has_many :groups_users
-- has_many :users, through: :groups_users
-- has_many :messages
+- has_many :users
 
 ## comments
 |column|Type|Options|
 |------|----|-------|
-|use|
-|post|
-|text|
+|user_id|references|null: false, foreign_key: true|
+|post_id|references|null: false, foreign_key: true|
+|text|text|null: false|
 
 ### Association
-
+- belongs_to: user
 
 
 ## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|card|references|null: false, foreign_key: true|
-|customer|
+|user_id|references|null: false, foreign_key: true|
+|card_id|string|null: false|
+|customer_id|string|null: false|
 
 ### Association
-- belongs_to :group
 - belongs_to :user
 
-## コンセプト
-コンテンツ販売プラットフォーム「Brain」を参考に、  
-投稿した記事を、有料で買える仕組み
+## 制作背景
+自分が利用してるもので馴染み深いものを作ってみようと思った。
+その中で、コンテンツ販売プラットフォーム「Brain」を参考にし、
+もっとユーザーが利用しやすくできるのではないかと思って制作した。
+
+## 工夫したポイント
+検索ボタン、ユーザーボタンを押したときに、フォームやメニューが表示されるように
+jQueryを使うのに少し苦労した。また、要素全体をクリック対象にするように
+CSSの範囲をどう広げられるかも工夫した。
+初めて使う人でも、操作しやすいようにシンプルな見た目を心がけた。
 
 ## 実装機能
 ・ログイン機能(メールアドレス)  
