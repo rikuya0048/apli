@@ -3,6 +3,7 @@ document.addEventListener(
   "DOMContentLoaded", e => {
     console.log('test');
     // var KEY = public_key;
+    
     if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
       
       Payjp.setPublicKey("pk_test_f0d7a1fca33f08a051b86659"); //ここに公開鍵を直書き
