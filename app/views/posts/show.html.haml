@@ -1,32 +1,32 @@
 .container
-  .main
+  .main 
     .postImage
       - if @post.image?
-        = image_tag @post.image.url, size: "500x300", class: "image"
+        = image_tag @post.image.url, size: "400x300", class: "post-image"
     .postTitle
       = @post.title
-    .postAuthor
-      = link_to @post.user.name, user_path, class: "show"
-      = link_to @post.price, card_path(@post.id), class: "buy-price"
-      - if user_signed_in? && current_user.id == @post.user_id
-        = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
-        = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
-    .postGood
-      評価
-    -# .postManage
-      -# - if user_signed_in? && current_user.id == @post.user_id
-      -#   = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
-      -#   = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
-    .postText
-      = simple_format @post.content
-    .comment
-      -# - if current_user
-      -#   = form_with(model: [@post, @comment], local: true) do |form|
-      -#     = form.text_area :text, placeholder: "レビューを入力してください", rows: "2", class: "form-comment"
-      -#     = form.submit "レビューする", class: "orange-btn"
-      -# - else
-      -#   %strong
-      -#     %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    .post-content
+
+      .postCategory
+        = @post.category.name
+      .postAuthor
+        = link_to @post.user.name, user_path(@post.user), class: "show"
+        = link_to @post.price, card_path(@post.id), class: "buy-price"
+        - if user_signed_in? && current_user.id == @post.user_id
+          = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
+          = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
+      .postGood
+        評価
+      .postText
+        = simple_format @post.content
+      -# .comment
+      -#   - if current_user
+      -#     = form_with(model: [@post, @comment], local: true) do |form|
+      -#       = form.text_area :text, placeholder: "レビューを入力してください", rows: "2", class: "form-comment"
+      -#       = form.submit "レビューする", class: "orange-btn"
+      -#   - else
+      -#     %strong
+      -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
       .comments
       %h4 この記事のレビュー
       - if current_user
@@ -42,7 +42,11 @@
             %strong
               = link_to comment.user.name, "/users/#{comment.user_id}"
             = comment.text
-  .side
-    = render "posts/side.html"
+  -# .side
+  -#   = render "posts/side.html"
+  -# .postManage
+  -#     - if user_signed_in? && current_user.id == @post.user_id
+  -#       = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
+  -#       = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
   
 

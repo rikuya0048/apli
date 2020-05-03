@@ -37,8 +37,7 @@
           = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
             = form.text_field :keyword, placeholder: "検索したいキーワード", class: "search-input"
             = form.submit "検索", class: "search-btn"
-      %h1 アイデアを広げよう
       = link_to "/" do
-        = image_tag '/material/logo/water_character.png', size: "75x55", class: "logo" 
+        = image_tag '/material/logo/water_character.png', size: "75x55", class: "logo"
     %main= yield
     %footer.footer

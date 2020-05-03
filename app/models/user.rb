@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :comments
   has_one  :card
   has_one :user_address, inverse_of: :user
+
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
   
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow

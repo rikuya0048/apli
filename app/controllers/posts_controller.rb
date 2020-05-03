@@ -2,16 +2,17 @@ class PostsController < ApplicationController
 before_action :move_to_index, except: [:index, :show, :search]
 
 def index
-  @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+  @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(3)
 end
 
 def create
-  Post.create(post_params)
+  @post = Post.create!(post_params)
   redirect_to root_path
 end
 
 def new
   @post = Post.new
+  @parents = Category.all.order("id ASC").limit(4)
 end
 
 def show
@@ -22,6 +23,9 @@ end
 
 def edit
   @post = Post.find(params[:id])
+
+  @category = @post.category
+  
 end
 
 def update
@@ -43,7 +47,7 @@ end
 private
 
 def post_params
-  params.require(:post).permit(:title, :image, :price, :content).merge(user_id: current_user.id)
+  params.require(:post).permit(:title, :image, :price, :category_id, :content).merge(user_id: current_user.id)
 end
 
 def move_to_index

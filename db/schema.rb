@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_040203) do
+ActiveRecord::Schema.define(version: 2020_05_03_113859) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -21,12 +21,38 @@ ActiveRecord::Schema.define(version: 2020_02_14_040203) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_messages_on_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,6 +63,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_040203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,6 +75,12 @@ ActiveRecord::Schema.define(version: 2020_02_14_040203) do
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
+  end
+
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,6 +97,11 @@ ActiveRecord::Schema.define(version: 2020_02_14_040203) do
   end
 
   add_foreign_key "cards", "users"
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
+  add_foreign_key "messages", "rooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "posts", "categories"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
 end

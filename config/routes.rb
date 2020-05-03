@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
-  resources :users, only: [:show] 
+  resources :users, only: [:index, :show] 
   resources :relationships, only: [:create, :destroy]
+  resources :messages, only: [:create]
+  resources :rooms, only: [:show, :create, :index]
   resources :posts, except: :index do
     resources :comments, only: [:create]
     collection do
@@ -17,11 +19,4 @@ Rails.application.routes.draw do
     end
   end
   
-  # resource "posts", only: :show do
-  #   resources :cards, only: :buy do
-  #     collection do
-  #       post "buy", to: "cards#buy"
-  #     end
-  #   end
-  # end
 end

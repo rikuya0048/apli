@@ -1,29 +1,39 @@
 .container
   .main
-    = @user.name
-    さんのプロフィール
-    = render "relationships/follow_button", user: @user, class: "follow"
-    .status
-      %p 年齢 
-      %p 出身地
-      %p 性別
-      %p 趣味
-      %p 一言
-
-    .top
-    = @user.name
-    さんの記事
-    - @posts.each do |post|
-      .content
-        .content__top
-          = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
-        .content__bottom
-          .content__title
-            = link_to post.title, post_path(post.id), class: "title"
-          .content__text
-            = post.content
-          .content__user
-            投稿者:
-            = post.user.name
-  .side
-    = render "posts/side.html"
+    .post-content
+      = @user.name
+      さんのプロフィール
+      = render "relationships/follow_button", user: @user, class: "follow"
+      .status
+        %p 年齢 
+        %p 出身地
+        %p 性別
+        %p 趣味
+        %p 一言
+      .chat
+      - if @user.id == current_user.id
+      - else
+        - if @isRoom == true
+          %p
+            %a{:href => "/rooms/#{@roomId}"} チャットへ
+        - else
+          = form_for @room do |f|
+            = fields_for @entry do |e|
+              = e.hidden_field :user_id, :value=> @user.id
+            = f.submit "チャットを始める"
+      .top
+      = @user.name
+      さんの記事
+      - @posts.each do |post|
+        .content
+          .content__top
+            = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
+          .content__bottom
+            .content__title
+              = link_to post.title, post_path(post.id), class: "title"
+            .content__text
+              = post.content
+            .content__user
+              投稿者:
+              = post.user.name
+      = link_to "ユーザー一覧に戻る", users_path

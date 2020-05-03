@@ -1,19 +1,45 @@
+.header-image
+  = image_tag '/material/logo/Fitch & Co..png'
 .container
-  .main
-    %h2 記事を見つけよう
-    - @posts.each do |post|
-      .content
-        .content__top
-          = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
-        .content__bottom
-          .content__title
-            = link_to post.title, post_path(post.id), class: "title"
-          .content__text
-            = post.content
-          .content__user
-            投稿者:
-            = post.user.name
-          .content__category
-    = paginate @posts
   .side
     = render "posts/side.html"
+  .main
+    -# - @posts.each do |post|
+    %h2 話題の投稿
+    .user1
+      .user1-content
+        .user1-content__image
+        .user1-content__name
+        .user1-content__title
+    %h2 新着の投稿
+    .user2
+      - @posts.each do |post|
+        .user2-content
+          .user2-content__image
+            = image_tag post.image.url, size: "100×100", class: "content-image" if post.image.present?
+          .user2-content__name
+            = post.user.name
+          .user2-content__title
+            = link_to post.title, post_path(post.id), class: "title"
+      = paginate @posts
+    %h2 おすすめユーザー
+    .user3
+    %h2 お仕事募集中
+    .user4
+
+  -#   = render "posts/side.html"
+  -# 
+  -#           投稿.content__user者:
+  -#           = post.user.name
+  -#         .content__category
+  -#   = paginate @posts
+  -# -# .side.main
+  -#   - @posts.each do |post|
+  -#     .content
+  -#       .content__top
+  -#         = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
+  -#       .content__bottom
+  -#         .content__title
+  -#           = link_to post.title, post_path(post.id), class: "title"
+  -#         .content__text
+  -#           = post.content
