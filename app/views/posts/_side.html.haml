@@ -4,44 +4,43 @@
   .side-middle__category
     = form_with model: @post, class: :form, local: true do |form|
       = form.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {id: "grand_child"})
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "プログラミング", "#", class: "menu-list"
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "ブログ", "#", class: "menu-list"
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "趣味", "#", class: "menu-list"
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "ノウハウ", "#", class: "menu-list"
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "自己啓発", "#", class: "menu-list"
-    .side-middle__category-content
-      %i#user.fa.fa-angle-double-right
-      = link_to "投資情報", "#", class: "menu-list"
-      
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "プログラミング", "#", class: "menu-list"
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "ブログ", "#", class: "menu-list"
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "趣味", "#", class: "menu-list"
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "ノウハウ", "#", class: "menu-list"
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "自己啓発", "#", class: "menu-list"
+    -# .side-middle__category-content
+    -#   %i#user.fa.fa-angle-double-right
+    -#   = link_to "投資情報", "#", class: "menu-list"
 .side-middle
   %h3 話してみよう
 
 .side-bottom
   %h3 話題のこの人
-  .side-bottom-content
-    .side-bottom-content-text
-    %i#user.fa.fa-angle-double-right
-    .side-bottom-content-title
-    aaaaa
-  .side-bottom-content
-    .side-bottom-content-text
-    %i#user.fa.fa-angle-double-right
-  .side-bottom-content
-    .side-bottom-content-text
-    %i#user.fa.fa-angle-double-right
-  .side-bottom-content
-    .side-bottom-content-text
-    %i#user.fa.fa-angle-double-right
+  -# .side-bottom-content
+  -#   .side-bottom-content-text
+  -#   %i#user.fa.fa-angle-double-right
+  -#   .side-bottom-content-title
+  -#   aaaaa
+  -# .side-bottom-content
+  -#   .side-bottom-content-text
+  -#   %i#user.fa.fa-angle-double-right
+  -# .side-bottom-content
+  -#   .side-bottom-content-text
+  -#   %i#user.fa.fa-angle-double-right
+  -# .side-bottom-content
+  -#   .side-bottom-content-text
+  -#   %i#user.fa.fa-angle-double-right
 
 -# ユーザー名
 -#   - if current_user

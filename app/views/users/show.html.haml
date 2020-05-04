@@ -3,13 +3,11 @@
     .post-content
       = @user.name
       さんのプロフィール
+      .user-image
+        = image_tag @user.icon.url, class: "user-icon"
+      - if user_signed_in? && current_user.id == @user.id
+        = link_to "編集", edit_user_registration_path, class: "postManage__edit"
       = render "relationships/follow_button", user: @user, class: "follow"
-      .status
-        %p 年齢 
-        %p 出身地
-        %p 性別
-        %p 趣味
-        %p 一言
       .chat
       - if @user.id == current_user.id
       - else
@@ -21,19 +19,33 @@
             = fields_for @entry do |e|
               = e.hidden_field :user_id, :value=> @user.id
             = f.submit "チャットを始める"
-      .top
+      .user-info
+        .status-left
+          %p 年齢 
+          %p 出身地
+          %p 性別
+          %p 趣味
+          %p 一言
+        .status-right
+          %p
+            = @user.name
+          %p
+            = @user.name
+          %p
+            = @user.name
+          %p
+            = @user.name
+      .user-post
       = @user.name
-      さんの記事
+      さんの記事一覧
       - @posts.each do |post|
-        .content
-          .content__top
-            = image_tag post.image.url, size: "500x300", class: "image" if post.image.present?
-          .content__bottom
-            .content__title
-              = link_to post.title, post_path(post.id), class: "title"
-            .content__text
-              = post.content
-            .content__user
-              投稿者:
-              = post.user.name
+        .user-content
+          .user-content__title
+            = link_to post.title, post_path(post.id), class: "user-title"
+          .user-content__bottom
+            .user-content__category
+              = post.category.name
+            .user-content__date
+              = post.created_at
       = link_to "ユーザー一覧に戻る", users_path
+      = link_to "編集regist", edit_user_registration_path

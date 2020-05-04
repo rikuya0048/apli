@@ -4,7 +4,7 @@
     = form_with model: @post, class: :form, local: true do |form|
       = form.text_field :title, placeholder: :記事のタイトルを入力してください, class: "form-title"
       = form.text_area :content, placeholder: :記事の内容を入力してください, class: "form-text"
-      = form.file_field :image, placeholder: "Image Url", calss: "form-image"
+      = form.file_field :image, placeholder: "Image Url", class: "form-image"
       = form.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {id: "grand_child"})
       = form.number_field :price, placeholder: "価格を設定してください", class: "form-price"
       = form.submit '公開する', class: "orange-btn"

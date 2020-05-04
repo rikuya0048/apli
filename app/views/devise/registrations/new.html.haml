@@ -21,6 +21,7 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "********", class: "password"
+      = f.file_field :image, placeholder: "Image Url", calss: "form-image"
     .actions
       = f.submit "登録する", class: "login-btn"
   -# = render "devise/shared/links"

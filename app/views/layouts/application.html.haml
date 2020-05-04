@@ -18,15 +18,15 @@
             %i#user.fa.fa-user.fa-2x
             .head-user-hidden
               %p
-                = link_to "マイページ", user_path(current_user), class: "menu-list"
+                = link_to "マイページ", edit_user_registration_path(current_user), class: "menu-list"
+              %p
+                = link_to "フォロー", "#", class: "menu-list"
+              %p
+                = link_to "メッセージ", "#", class: "menu-list"
+              %p
+                = link_to "カード登録", "#", class: "menu-list"
               %p
                 = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-list"
-              %p
-                = link_to "購入した記事", "#", class: "menu-list"
-              %p
-                = link_to "アカウント設定", "#", class: "menu-list"
-              %p
-                = link_to "ダッシュボード", "#", class: "menu-list"
             = link_to "投稿する", new_post_path, class: 'create-btn'
         - else
           = link_to "ログイン", new_user_session_path, class: "login-btn"

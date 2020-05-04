@@ -1,15 +1,17 @@
-%h1 DMサンプルアプリ
-- if user_signed_in?
-  %h2
-    Hello #{current_user.email}
-  - @users.each do |u|
-    %p
-      %a{:href => "/users/#{u.id}"}
-        = u.email
-        さん
-    %hr/
-  = link_to "ログアウト", destroy_user_session_path, :method => :delete
-- else
-  = link_to "ユーザーを登録する", new_user_registration_path
-  %br/
-  = link_to "ログインする", new_user_session_path
+.container
+  .main
+    %h1 登録ユーザー
+    - if user_signed_in?
+      %h2
+        あなたは #{current_user.name}
+      - @users.each do |u|
+        %p
+          %a{:href => "/users/#{u.id}"}
+            = u.name
+            さん
+        %hr/
+      = link_to "ログアウト", destroy_user_session_path, :method => :delete
+    - else
+      = link_to "ユーザーを登録する", new_user_registration_path
+      %br/
+      = link_to "ログインする", new_user_session_path

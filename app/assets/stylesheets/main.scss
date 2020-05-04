@@ -14,7 +14,7 @@
     height: 100%;
     width: 75%;
     margin: 0 auto;
-    background-color: lightgrey;
+    // background-color: lightgrey;
 
     .user1 {
       height: 250px;
@@ -30,6 +30,7 @@
         margin-bottom: 20px;
         margin-right: 10px;
         border-radius: 1px solid #333;
+        box-shadow: 0 0 8px gray;
         cursor: pointer;
 
         .user1-content__image {
@@ -58,6 +59,7 @@
         margin-bottom: 20px;
         margin-right: 10px;
         border-radius: 1px solid #333;
+        box-shadow: 0 0 8px gray;
         cursor: pointer;
 
         .content-image {
@@ -75,18 +77,76 @@
     .user3 {
       height: 250px;
       width: 100%;
-      background-color:lightgreen;
+      // background-color:lightgreen;
       margin-bottom: 20px;
       display: flex;
+
+      .user3-content {
+        height: 100%;
+        width: 100%;
+        background-color: whitesmoke;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        box-shadow: 0 0 8px gray;
+        cursor: pointer;
+      }
     }
 
     .user4 {
-      height: 250px;
+      height: 800px;
       width: 100%;
-      background-color:lightgreen;
+      // background-color:lightgreen;
       margin-bottom: 20px;
-      display: flex;
       
+      .user4-content {
+        height: 170px;
+        width: 100%;
+        // background-color: darkturquoise;
+        margin-bottom: 20px;
+        box-shadow: 0 0 8px gray;
+        display: flex;
+
+        .user4-content__left {
+          width: 75%;
+          display: flex;
+
+          .user4-content__left-profile {
+            width: 35%;
+            background-color: whitesmoke;
+          }
+
+          .user4-content__left-work {
+            width: 65%;
+
+            .user4-content__left-work-title {
+              height: 35%;
+              font-size: 20px;
+              font-weight: bold;
+              text-align: center;
+            }
+
+            .user4-content__left-work-bottom {
+              height: 65%;
+              display: flex;
+
+              .user4-content__left-work-category {
+                width: 50%;
+                text-align: center;
+                
+              }
+
+
+            }.user4-content__left-work-price {
+              width: 50%;
+              text-align: center;
+            }
+          }
+        }
+
+        .user4-content__right {
+          width: 25%;
+        }
+      }
     }
 
 
@@ -157,7 +217,7 @@ header {
   width: 100%;
   min-width: 900px;
   position: fixed;
-  background-color: lightblue;
+  background-color: darkslategray;
   
   .header-btn {
     float: right;
@@ -208,4 +268,8 @@ body {
 .logo {
   margin-left: 60px;
   margin-bottom: 20px;
+}
+
+.header-photo {
+  width: 100%;
 }

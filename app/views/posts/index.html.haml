@@ -1,5 +1,5 @@
 .header-image
-  = image_tag '/material/logo/Fitch & Co..png'
+  = image_tag '/material/logo/Fitch & Co..png', class: "header-photo"
 .container
   .side
     = render "posts/side.html"
@@ -22,10 +22,40 @@
           .user2-content__title
             = link_to post.title, post_path(post.id), class: "title"
       = paginate @posts
-    %h2 おすすめユーザー
+    %h2 新着ユーザー
     .user3
+      - @users.each do |user|
+        .user3-content
+          .user3-content__image
+          .user3-content__name
+            = user.name
+          .user3-content__title
+      = paginate @users
     %h2 お仕事募集中
     .user4
+      .user4-content
+        .user4-content__left
+          .user4-content__left-profile
+            .user4-content__left-profile-image
+              -# = image_tag @user.icon.url, class: "user-icon"
+            .user4-content__left-profile-name
+          .user4-content__left-work
+            .user4-content__left-work-title
+              web制作します
+            .user4-content__left-work-bottom
+              .user4-content__left-work-category
+                %p カテゴリー名
+                プログラミング
+
+              .user4-content__left-work-price
+                %p 希望単価
+                1000円
+        .user4-content__right
+          .tell-btn
+            話をきく
+      .user4-content
+      .user4-content
+      .user4-content
 
   -#   = render "posts/side.html"
   -# 
