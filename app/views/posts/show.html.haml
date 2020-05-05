@@ -37,7 +37,7 @@
       -#   = @post.price
       -#   円
       .comments
-      %h4 コメント欄
+        %h4 コメント欄
       - if @comments
         - @comments.each do |comment|
           %p
@@ -47,7 +47,7 @@
       - if current_user
         = form_with(model: [@post, @comment], local: true) do |form|
           = form.text_area :text, placeholder: "コメントを入力してください", rows: "2", class: "form-comment"
-          = form.submit "コメントする", class: "orange-btn"
+          = form.submit "コメントする", class: "comment-btn"
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※

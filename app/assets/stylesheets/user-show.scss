@@ -1,31 +1,135 @@
 .container {
   .main {
-
-    .user-info {
-      display: flex;
-
-      .status-left {
-        width: 20%;
-        border-right: 1px solid #ccc;
-
-        p {
-        height: 30px;
-        border-bottom: 1px solid #ccc;
+    
+    .post-content {
+      h2 {
         text-align: center;
-        }
+        font-size: 20px;
       }
 
-      .status-right {
-        width: 80%;
+      .post-contents{
+        display: flex;
+        height: 240px;
+        width: 100%;
+        margin-bottom: 30px;
 
-        p {
-        height: 30px;
-        padding-left: 20px;
-        border-bottom: 1px solid #ccc;
+        .post-contents-left {
+          // height: 500px;
+          width: 65%;
+
+          .user-info {
+            display: flex;
+            height: 240px;
+            border-top: 1px solid #ccc;
+
+            .status-left {
+              height: 240px;
+              width: 20%;
+              border-right: 2px solid #ccc;
+
+              p {
+              height: 31px;
+              border-bottom: 1px solid #ccc;
+              text-align: center;
+              font-weight: bold;
+              }
+            }
+
+            .status-right {
+              width: 80%;
+
+              p {
+                height: 31px;
+                padding-left: 20px;
+                font-weight: bold;
+                border-bottom: 1px solid #ccc;
+              }
+            }
+          }
         }
-      }
-      
 
+        .post-contents-right {
+          width: 35%;
+
+          .user-image {
+            width: 100%;
+            height: 140px;
+
+            .user-icon {
+              height: 110px;
+              width: 110px;
+              border-radius: 100px;
+              border: 2px solid #ccc;
+              margin-top: 20px;
+              margin-left: 50px;
+            }
+          }
+
+          .user-btn {
+            height: 100px;
+            width: 100%;
+
+            .follow-box {
+              height: 50px;
+              width: 100%;
+
+              #f-btn {
+                font-size: 14px;
+                margin-top: 15px;
+                margin-bottom: 30px;
+                margin-left: 58px;
+                text-decoration: none;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                padding: 5px 15px;
+                color: white;
+                background-color: rgb(150, 0, 0);
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+              }
+            }
+
+            .postManage__edit {
+              margin-left: 92px;
+              color: #337ab7;
+              font-weight: bold;
+            }
+
+            .chat-box {
+              height: 50px;
+              width: 100%;
+              margin-top: 20px;
+
+              a {
+                text-decoration: none;
+                font-size: 14px;
+                margin-left: 58px;
+                text-decoration: none;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                padding: 6px 15px;
+                background-color: #1c8b00;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                cursor: pointer;
+              }
+            }
+          }
+
+      }
+    }
+    .return {
+      font-weight: bold;
+      font-size: 15px;
+      color: #337ab7;
+    }
+
+    .user-post {
+      h3 {
+        text-align: center;
+      }
     }
 
     .user-icon {
@@ -35,19 +139,22 @@
     
 
     .user-content {
-      height: 80px;
+      height: 100px;
       width: 100%;
       margin-bottom: 30px;
       box-shadow: 0 0 8px gray;
 
       .user-content__title {
         height: 50px;
-        text-align: center;
+        // background-color: red;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         .user-title {
-          font-size: 20px;
+          font-size: 18px;
           text-decoration: none;
           font-weight: bold;
-          
+          color: #337ab7;
         }
       }
 
@@ -55,16 +162,34 @@
         display: flex;
 
         .user-content__category {
-          width: 50%;
+          width: 80%;
           text-align: center;
+
+          span#category {
+            border: 2px solid rgb(0, 121, 54);
+            font-size: 12px;
+            border-radius: 4px;
+            padding: 7px 10px;
+            font-weight: bold;
+            float: right;
+          }
         }
 
         .user-content__date {
-          width: 50%;
+          width: 20%;
           text-align: center;
+
+          span#date {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 8px;
+            color: lightslategray;
+            float: right;
+            padding-right: 20px;
+          }
         }
       }
     }
   }
-
+}
 }

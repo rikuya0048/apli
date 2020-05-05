@@ -1,52 +1,61 @@
 .container
   .main
     .post-content
-      = @user.name
-      さんのプロフィール
-      .user-image
-        = image_tag @user.icon.url, class: "user-icon" if @user.icon.present?
-      - if user_signed_in? && current_user.id == @user.id
-        = link_to "編集", edit_user_registration_path, class: "postManage__edit"
-      = render "relationships/follow_button", user: @user, class: "follow"
-      .chat
-      - if @user.id == current_user.id
-      - else
-        - if @isRoom == true
-          %p
-            %a{:href => "/rooms/#{@roomId}"} チャットへ
-        - else
-          = form_for @room do |f|
-            = fields_for @entry do |e|
-              = e.hidden_field :user_id, :value=> @user.id
-            = f.submit "チャットを始める"
-      .user-info
-        .status-left
-          %p 年齢 
-          %p 出身地
-          %p 性別
-          %p 趣味
-          %p 一言
-        .status-right
-          %p
-            = @user.age
-          %p
-            = @user.area
-          %p
-            = @user.gender
-          %p
-            = @user.hobby
-          %p
-            = @user.introduction
+      %h2
+        = @user.name
+        さんのプロフィール
+      .post-contents
+        .post-contents-left
+          .user-info
+            .status-left
+              %p 年齢 
+              %p 出身地
+              %p 性別
+              %p 趣味
+              %p 一言
+            .status-right
+              %p
+                = @user.age
+              %p
+                = @user.area
+              %p
+                = @user.gender
+              %p
+                = @user.hobby
+              %p
+                = @user.introduction
+        .post-contents-right
+          .user-image
+            = image_tag @user.icon.url, class: "user-icon" if @user.icon.present?
+          .user-btn 
+            - if user_signed_in? && current_user.id == @user.id
+              = link_to "編集", edit_user_registration_path, class: "postManage__edit"
+            .follow-box
+              = render "relationships/follow_button", user: @user, class: "follow"
+            .chat-box
+              - if @user.id == current_user.id
+              - else
+                - if @isRoom == true
+                  %p2
+                    %a{:href => "/rooms/#{@roomId}"} チャットへ
+                - else
+                  = form_for @room do |f|
+                    = fields_for @entry do |e|
+                      = e.hidden_field :user_id, :value=> @user.id
+                    = f.submit "チャットを始める"
       .user-post
-      = @user.name
-      さんの記事一覧
+        %h3
+          = @user.name
+          さんの記事一覧
       - @posts.each do |post|
         .user-content
           .user-content__title
             = link_to post.title, post_path(post.id), class: "user-title"
           .user-content__bottom
             .user-content__category
-              = post.category.name
+              %span#category
+                = post.category.name
             .user-content__date
-              = post.created_at
-      = link_to "ユーザー一覧に戻る", users_path
+              %span#date
+                = post.created_at.strftime('%Y/%m/%d')
+      = link_to "他のユーザーをみる", users_path, class: "return"
