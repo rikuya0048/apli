@@ -38,33 +38,38 @@
   .main
     .post-content
       = @user.name
-      さんのプロフィールedit
+      さんのプロフィール編集
       .user-info
         .status-left
+          %p アイコン
           %p 年齢 
           %p 出身地
           %p 性別
           %p 趣味
           %p 一言
         .status-right
-        = form_with model: @user, class: :form, local: true do |form|
-          = form.text_field :area, placeholder: "地域", calss: "form-area"
-          = form.email_field :email, autofocus: true, autocomplete: "email"
-          = form.text_field :area, placeholder: "地域", class: "form-area"
-          = form.file_field :icon, placeholder: "Image Url", class: "form-image"
-          = form.text_field :age, placeholder: "年齢", class: "form-area"
-          = form.text_field :gender, placeholder: "性別", class: "form-area"
-          = form.text_field :introduction, placeholder: "自己紹介", class: "form-area"
-          = form.text_field :hobby, placeholder: "趣味", class: "form-area"
-          = form.submit '設定する', class: "orange-btn"
-          %p
-            = @user.name
-          %p
-            = @user.name
-          %p
-            = @user.name
-          %p
-            = @user.name
-      .user-post
-      = @user.name
-      = link_to "ユーザー一覧に戻る", users_path
+          = form_with model: @user, class: :form, local: true do |form|
+            %p
+              = form.file_field :icon, placeholder: "Image Url", class: "form-image"
+            %p
+              = form.text_field :age, placeholder: "年齢", class: "form-area"
+            %p
+              = form.text_field :area, placeholder: "地域", class: "form-area"
+            %p
+              = form.text_field :gender, placeholder: "性別", class: "form-area"
+            %p
+              = form.text_field :hobby, placeholder: "趣味", class: "form-area"
+            %p
+              = form.text_field :introduction, placeholder: "自己紹介", class: "form-area"
+            = form.submit '設定する', class: "orange-btn"
+        -# .status-right
+        -# = form_with model: @user, class: :form, local: true do |form|
+        -#   = form.text_field :area, placeholder: "地域", calss: "form-area"
+        -#   = form.email_field :email, autofocus: true, autocomplete: "email"
+        -#   = form.text_field :area, placeholder: "地域", class: "form-area"
+        -#   = form.file_field :icon, placeholder: "Image Url", class: "form-image"
+        -#   = form.text_field :age, placeholder: "年齢", class: "form-area"
+        -#   = form.text_field :gender, placeholder: "性別", class: "form-area"
+        -#   = form.text_field :introduction, placeholder: "自己紹介", class: "form-area"
+        -#   = form.text_field :hobby, placeholder: "趣味", class: "form-area"
+        -#   = form.submit '設定する', class: "orange-btn"

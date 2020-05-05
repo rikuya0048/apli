@@ -4,6 +4,8 @@ before_action :move_to_index, except: [:index, :show, :search]
 def index
   @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(3)
   @users= User.all.order("created_at DESC").page(params[:page]).per(4)
+  @talk = Post.where(category_id: "2").order("created_at DESC").page(params[:page]).per(3)
+  @work = Post.where(category_id: "3").order("created_at DESC").page(params[:page]).per(4)
 end
 
 def create

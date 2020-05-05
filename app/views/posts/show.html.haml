@@ -11,15 +11,31 @@
       .postText
         = simple_format @post.content
       .postAuthor
-        = link_to @post.user.name, user_path(@post.user), class: "show"
-        - if user_signed_in? && current_user.id == @post.user_id
-          = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
-          = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
-      .post-buy
-        = link_to "契約する", card_path(@post.id), class: "buy-price"
-      .post-price
-        = @post.price
-        円
+        .postAuthor-left
+          .postAuthor-left-image
+            = image_tag @post.user.icon.url, class: "user4-icon" if @post.user.icon.present?
+          .postAuthor-left-name
+            = link_to @post.user.name, user_path(@post.user), class: "name-show"
+        .postAuthor-right
+          .postAuthor-right-price
+            %span#text
+              希望単価
+            %span#price
+              = @post.price
+            %span#mark
+              円
+            .aaaaa
+              - if user_signed_in? && current_user.id == @post.user_id
+                = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
+                = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
+        .postAuthor-buy
+          .postAuthor-buy-btn
+            = link_to "契約する", card_path(@post.id), class: "contract-btn"
+      -# .post-buy
+      -#   = link_to "契約する", card_path(@post.id), class: "buy-price"
+      -# .post-price
+      -#   = @post.price
+      -#   円
       .comments
       %h4 コメント欄
       - if @comments

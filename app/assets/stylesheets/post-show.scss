@@ -1,42 +1,121 @@
 .main {
 
-  .postImage {
-    height: 300px;
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 30px;
-  }
-
-  .postTitle {
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    padding-top: 20px;
-  }
-
   .post-content {
     height: 100%;
     width: 600px;
     background-color: whitesmoke;
     margin: 0 auto;
 
+    .postImage {
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+    }
 
-  }
+    .postTitle {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    }
 
-  .postAuthor {
   
-    padding: 50px 30px;
-    border-bottom: 1px solid #ccc;
-  }
 
-  .postGood {
-    height: 70px;
-    border-bottom: 1px solid #ccc;
-  }
+    .postText {
+    padding-right: 50px;
+    padding-left: 50px;
+    }
 
-  .postText {
+    .postAuthor {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 170px;
+    display: flex;
+
+      .postAuthor-left {
+        width: 30%;
+        height: 170px;
+
+        .postAuthor-left-image {
+          width: 100%;
+          height:130px;
+
+          .user4-icon {
+          height: 110px;
+          width: 110px;
+          margin-top: 20px;
+          margin-left: 30px;
+          border-radius: 100px;
+          }
+        }
+
+        .postAuthor-left-name {
+          margin-top: 10px;
+          text-align: center;
+          
+          .name-show {
+            text-decoration: none;
+            color: #337ab7;
+            font-weight: bold;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .postAuthor-right {
+        width: 40%;
+        height: 170px;
+
+        .postAuthor-right-price {
+          width: 200px;
+          height: 50px;
+          margin-top: 60px;
+          #text {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          #price {
+            font-size: 18px;
+            font-weight: bold;
+            
+          }
+          #mark {
+            font-size: 18px;
+            font-weight: bold;
+            
+          }
+        }
+      }
+
+      .postAuthor-buy {
+        width: 30%;
+        height: 170px;
+
+        .postAuthor-buy-btn {
+
+          margin-top: 70px;
+          .contract-btn {
+          text-decoration: none;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          padding: 13px 35px;
+          background-color: #0068b7;
+          color: white;
+          font-weight: bold;
+          text-align: center;
+          cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .postText {
     padding-top: 30px;
     height: 300px;
+    }
   }
 }
 
@@ -114,4 +193,4 @@
       font-weight: bold;
       font-size: 16px;
       cursor: pointer;
-    }
+}

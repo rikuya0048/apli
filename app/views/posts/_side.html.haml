@@ -1,29 +1,37 @@
 .side-top
-  %h2 ユーザーを見つける
+  %h2 サイドバー
   %h3 カテゴリー
   .side-middle__category
-    = form_with model: @post, class: :form, local: true do |form|
-      = form.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {id: "grand_child"})
-    -# .side-middle__category-content
-    -#   %i#user.fa.fa-angle-double-right
-    -#   = link_to "プログラミング", "#", class: "menu-list"
-    -# .side-middle__category-content
-    -#   %i#user.fa.fa-angle-double-right
-    -#   = link_to "ブログ", "#", class: "menu-list"
-    -# .side-middle__category-content
-    -#   %i#user.fa.fa-angle-double-right
-    -#   = link_to "趣味", "#", class: "menu-list"
-    -# .side-middle__category-content
-    -#   %i#user.fa.fa-angle-double-right
-    -#   = link_to "ノウハウ", "#", class: "menu-list"
-    -# .side-middle__category-content
+    -# = form_with model: @post, class: :form, local: true do |form|
+    -#   = form.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {id: "grand_child"})
+    -#   = form.submit "検索", class: "search-btn"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "会いたい", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "話たい", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "働きたい", "#", class: "menu-list"
+    .side-middle__category-content
+      %i#user.fa.fa-angle-double-right
+      = link_to "参加したい", "#", class: "menu-list"
+    .side-middle__category-content
+      = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "検索したいカテゴリーid", class: "search-input"
+        = form.submit "検索", class: "search-btn"
+
+      -# = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+      -#   = form.text_field :keyword, placeholder: "検索したいカテゴリーid", class: "search-input"
+        -# = form.collection_select(:category_id, Category.all, :id, :name, {prompt: "---"}, {id: "grand_child"})
     -#   %i#user.fa.fa-angle-double-right
     -#   = link_to "自己啓発", "#", class: "menu-list"
     -# .side-middle__category-content
     -#   %i#user.fa.fa-angle-double-right
     -#   = link_to "投資情報", "#", class: "menu-list"
 .side-middle
-  %h3 話してみよう
+  %h3
 
 .side-bottom
   %h3 話題のこの人

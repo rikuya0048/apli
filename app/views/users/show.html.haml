@@ -4,7 +4,7 @@
       = @user.name
       さんのプロフィール
       .user-image
-        = image_tag @user.icon.url, class: "user-icon"
+        = image_tag @user.icon.url, class: "user-icon" if @user.icon.present?
       - if user_signed_in? && current_user.id == @user.id
         = link_to "編集", edit_user_registration_path, class: "postManage__edit"
       = render "relationships/follow_button", user: @user, class: "follow"
@@ -28,13 +28,15 @@
           %p 一言
         .status-right
           %p
-            = @user.name
+            = @user.age
           %p
-            = @user.name
+            = @user.area
           %p
-            = @user.name
+            = @user.gender
           %p
-            = @user.name
+            = @user.hobby
+          %p
+            = @user.introduction
       .user-post
       = @user.name
       さんの記事一覧
@@ -48,4 +50,3 @@
             .user-content__date
               = post.created_at
       = link_to "ユーザー一覧に戻る", users_path
-      = link_to "編集regist", edit_user_registration_path
