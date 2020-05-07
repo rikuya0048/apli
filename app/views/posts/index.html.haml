@@ -43,7 +43,7 @@
           .user4-content__left
             .user4-content__left-profile
               .user4-content__left-profile-image
-                = image_tag post.user.icon.url, class: "user4-icon"
+                = image_tag post.user.icon.url, class: "user4-icon" if user.icon.present?
               .user4-content__left-profile-name
                 = post.user.name
             .user4-content__left-work
