@@ -9,7 +9,7 @@
   .post-content-show {
     height: 100%;
     width: 600px;
-    // background-color: white;
+    overflow: scroll;
     margin: 0 auto;
     border: 2px solid #ccc;
 
@@ -31,7 +31,9 @@
 
   
 
-    .postText {
+    .post-Text {
+    height: 100%;
+    width: 600px;
     padding-right: 50px;
     padding-left: 50px;
     }
