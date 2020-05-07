@@ -1,6 +1,6 @@
 .container
   .main
-    .post-content
+    .post-content-show
       .category-btn
         = @post.category.name
       .postImage
@@ -30,7 +30,7 @@
                 = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
         .postAuthor-buy
           .postAuthor-buy-btn
-            = link_to "契約する", card_path(@post.id), class: "contract-btn"
+            = link_to "契約する", new_card_path(@post.id), class: "contract-btn"
       -# .post-buy
       -#   = link_to "契約する", card_path(@post.id), class: "buy-price"
       -# .post-price

@@ -45,11 +45,27 @@
 .container
   .main
     .inner
+      -# %h2 購入完了画面
+      -# .buy-content
+      -#   %p
+      -#     %label 販売者
+      -#     %span
+      -#       = @post.user.name
+      -#   %p
+      -#     %label 商品名
+      -#     %span
+      -#       = @post.title
+      -#   %p
+      -#     %label 価格
+      -#     %span
+      -#       = @post.price
+      -#       %span
+      -#       円
       %h2 カード情報入力
       .card-register
         = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
           .card-register__list
-            %label カード番号
+            %label カード番号(4242424242424242でお願いします)
             = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
           .card-register__list
             %label 有効期限
@@ -70,8 +86,6 @@
             %span 月/
             %select#exp_year{name: "exp_year", type: "text"}
               %option{value: ""} --
-              %option{value: "2019"}19
-              %option{value: "2020"}20
               %option{value: "2021"}21
               %option{value: "2022"}22
               %option{value: "2023"}23
@@ -86,4 +100,4 @@
             %label セキュリティコード
             = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           #card_token
-            = submit_tag "追加する", id: "token_submit", class:"card-register-btn"
+            = submit_tag "購入する", id: "token_submit", class:"card-register-btn"

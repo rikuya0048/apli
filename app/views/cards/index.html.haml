@@ -1,7 +1,11 @@
 .container
   .main
     .inner
-      %h2 購入完了画面
+      %h2 購入確認画面index
+      -# = link_to "カードの登録", new_card_path, class: "card-new"
+      -# .buy-btn
+      -#   = link_to  "/cards/#{@post.id}",class:"buy-btn__link" do
+      -#     購入する
       .buy-content
         %p
           %label 販売者
@@ -17,14 +21,10 @@
             = @post.price
             %span
             円
-        %h3
-          お買い上げありがとうございます。
       .buy-box
-        = link_to  "/",class: "buy-btn-last" do
-          元に戻る
-        -# = link_to  "/cards/#{@post.id}",class: "buy-btn-last" do
+        -# = link_to  "/cards/#{@post.id}",class: "login-btn" do
         -#   購入する
-        -# = link_to  "購入する", post_path(@post.id), class: "buy-btn-last"
+        = link_to  "購入する", post_path(@post.id), class: "buy-btn-last"
       -#   = link_to "購入する", pay_card_path, class: "buy-btn-last"
       .buy-card
         = link_to "カードの登録", new_card_path, class: "card-new"

@@ -1,13 +1,18 @@
 class CardsController < ApplicationController
   require 'payjp'
 
+  def index
+    @post = Post.find(params[:id])
+  end
+
   def show
-    Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
     # public_key = 'pk_test_f0d7a1fca33f08a051b86659'
     card = Card.where(user_id: current_user.id)
+    # redirect_to "new"
   end
 
   def pay #payjpとCardのデータベース作成を実施します。
@@ -31,7 +36,7 @@ class CardsController < ApplicationController
   end
 
   def show #クレジット購入
-    Post.find(params[:id])
+    @post = Post.find(params[:id])
     if user_signed_in?
       card = current_user.card
       if card.blank?
@@ -47,18 +52,22 @@ class CardsController < ApplicationController
         customer: card.customer_id, #顧客ID
         currency: 'jpy', #日本円
         )
-        # if @post.update(status: 1, buyer_id: current_user.id)
-          # flash[:notice] = '購入しました。'
-          # redirect_to "/"
-        # else
-        #   flash[:alert] = '購入に失敗しました。'
-        #   redirect_to "/"
-        end
+
+    # if @post.update(status: 1, buyer_id: current_user.id)
+    #       flash[:notice] = '購入しました。'
+    #       redirect_to "/"
+    #     else
+    #       flash[:alert] = '購入に失敗しました。'
+    #       redirect_to "/"
+    #     end
+
       end
-    # else
-    #   redirect_to "/users/sign_up"
-    #   flash[:alert] = '購入には新規登録が必要です'
-    # end
+    else
+
+      # redirect_to "/users/sign_up"
+      # flash[:alert] = '購入には新規登録が必要です'
+
+    end
   end
 
 end

@@ -1,6 +1,6 @@
 .container
   .main
-    %h2 新規記事の作成
+    %h2 投稿を編集する
     = form_with model: @post, class: :form, local: true do |form|
       = form.text_field :title, placeholder: :記事のタイトルを入力してください, class: "form-title"
       = form.text_area :content, placeholder: :記事の内容を入力してください, class: "form-text"
