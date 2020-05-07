@@ -6,61 +6,65 @@
   .main
     %h2 新着ユーザー
     .user3
-      - @users.each do |user|
-        .user3-content
-          .user3-content__image
-            = image_tag user.icon.url, class: "user3-icon" if user.icon.present?
-          .user3-content__name
-            = link_to user.name, user_path(user.id), class: "content-name"
-          .user3-content__title
-    = paginate @users
+      - if @users.present?
+        - @users.each do |user|
+          .user3-content
+            .user3-content__image
+              = image_tag user.icon.url, class: "user3-icon" if user.icon.present?
+            .user3-content__name
+              = link_to user.name, user_path(user.id), class: "content-name"
+            .user3-content__title
+      = paginate @users
     %h2 新着の投稿
     .user2
-      - @posts.each do |post|
-        .user2-content
-          .user2-content__image
-            = image_tag post.image.url, size: "100×100", class: "content-image" if post.image.present?
-          .user2-content__title
-            = link_to post.title, post_path(post.id), class: "content-title"
+      - if @posts.present?
+        - @posts.each do |post|
+          .user2-content
+            .user2-content__image
+              = image_tag post.image.url, size: "100×100", class: "content-image" if post.image.present?
+            .user2-content__title
+              = link_to post.title, post_path(post.id), class: "content-title"
           -# .user2-content__name
           -#   = post.user.name
-    = paginate @posts
+      = paginate @posts
     %h2 お話しよう
     .user1
-      - @talk.each do |post|
-        .user1-content
-          .user1-content__image
-            = image_tag post.image.url, size: "100×100", class: "content-image" if post.image.present?
-          .user1-content__title
-            = link_to post.title, post_path(post.id), class: "content-title"
+      - if @talk.present?
+        - @talk.each do |post|
+          .user1-content
+            .user1-content__image
+              = image_tag post.image.url, size: "100×100", class: "content-image" if post.image.present?
+            .user1-content__title
+              = link_to post.title, post_path(post.id), class: "content-title"
           -# .user1-content__name
           -#   = post.user.name
-    = paginate @talk
+      = paginate @talk
     %h2 お仕事募集中
     .user4
-      - @work.each do |post|
-        .user4-content
-          .user4-content__left
-            .user4-content__left-profile
-              .user4-content__left-profile-image
-                = image_tag post.user.icon.url, class: "user4-icon" if post.user.icon.present?
-              .user4-content__left-profile-name
-                = post.user.name
-            .user4-content__left-work
-              .user4-content__left-work-title
-                = link_to post.title, post_path(post.id), class: "content-title"
-              .user4-content__left-work-bottom
-                .user4-content__left-work-category
-                  %span#category
-                    = post.category.name
-                .user4-content__left-work-price
-                  %span#text
-                    希望単価
-                  %span#price
-                    = post.price
-                  %span#mark
-                    円〜
-          .user4-content__right
-            .tell-btn
-              = link_to "詳細を見る", post_path(post.id), class: "syousai-btn"
-    = paginate @work
+      - if @work.present?
+        - @work.each do |post|
+          .user4-content
+            .user4-content__left
+              .user4-content__left-profile
+                .user4-content__left-profile-image
+                  = image_tag post.user.icon.url, class: "user4-icon" if post.user.icon.present?
+                .user4-content__left-profile-name
+                  = post.user.name
+              .user4-content__left-work
+                .user4-content__left-work-title
+                  = link_to post.title, post_path(post.id), class: "content-title"
+                .user4-content__left-work-bottom
+                  .user4-content__left-work-category
+                    %span#category
+                      = post.category.name
+                  .user4-content__left-work-price
+                    %span#text
+                      希望単価
+                    %span#price
+                      = post.price
+                    %span#mark
+                      円〜
+            .user4-content__right
+              .tell-btn
+                = link_to "詳細を見る", post_path(post.id), class: "syousai-btn"
+      = paginate @work
