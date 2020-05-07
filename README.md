@@ -1,6 +1,6 @@
 # README
-<img width="1149" alt="スクリーンショット 2020-03-17 13 33 46" src="https://user-images.githubusercontent.com/59165663/76822324-faf29e80-6853-11ea-8ada-7ff0c38b9986.png">
 
+<img width="821" alt="スクリーンショット 2020-05-08 1 32 31" src="https://user-images.githubusercontent.com/59165663/81320243-d5537a00-90cb-11ea-825a-1724dc77c8a1.png">
 ## 使用した技術
 
 |  種別  |  名称  |
