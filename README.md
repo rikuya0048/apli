@@ -1,10 +1,9 @@
 # README
+<img width="821" alt="スクリーンショット 2020-05-08 1 32 31" src="https://user-images.githubusercontent.com/59165663/81320243-d5537a00-90cb-11ea-825a-1724dc77c8a1.png">
 
 ## アプリケーションの概要
 クリエイーターやフリーランス同士のコミュニティサイトです。
 http://3.114.144.37/ にアクセスして頂くとご覧いただけます。
-
-<img width="821" alt="スクリーンショット 2020-05-08 1 32 31" src="https://user-images.githubusercontent.com/59165663/81320243-d5537a00-90cb-11ea-825a-1724dc77c8a1.png">
 
 ## 使用した技術
 
